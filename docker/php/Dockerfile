@@ -2,7 +2,7 @@ FROM php:8.1-fpm
 
 COPY php.ini /usr/local/etc/php/
 
-RUN useradd -m appuser
+RUN useradd -u 1000 -m -s /bin/bash appuser
 
 RUN apt update \
   && apt install -y default-mysql-client zlib1g-dev libzip-dev unzip \
